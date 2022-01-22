@@ -50,6 +50,18 @@ public class ReadCsvDataTest {
                         .cost("a diamond worth at least 5,000 gp")
                         .description("You conjure a portal linking an unoccupied space you can see within range to a precise location on a different plane of existence. The portal is a circular opening, which you can make 5 to 20 feet in diameter. You can orient the portal in any direction you choose. The portal lasts for the duration.<br> The portal has a front and a back on each plane where it appears. Travel through the portal is possible only by moving through its front. Anything that does so is instantly transported to the other plane, appearing in the unoccupied space nearest to the portal.<br> Deities and other planar rulers can prevent portals created by this spell from opening in their presence or anywhere within their domains.<br> When you cast this spell, you can speak the name of a specific creature (a pseudonym, title, or nickname doesn't work). If that creature is on a plane other than the one you are on, the portal opens in the named creature's immediate vicinity and draws the creature through it to the nearest unoccupied space on your side of the portal. You gain no special power over the creature, and it is free to act as the DM deems appropriate. It might leave, attack you, or help you. ")
                         .classDescription("Cleric")
+                        .build(),
+                SpellCard.builder()
+                        .spellLevel("2")
+                        .name("Augury (ritual)")
+                        .type("2nd level Divination")
+                        .castingDuration("1 minute")
+                        .range("Self")
+                        .requirements("V, S, M")
+                        .duration("Instantaneous")
+                        .cost("specially marked sticks, bones, or similar tokens worth at least 25 gp")
+                        .description("By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens.<br> • <i>Weal</i>...")
+                        .classDescription("Cleric (*)(Knowledge)")
                         .build()
         );
     }
