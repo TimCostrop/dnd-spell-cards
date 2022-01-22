@@ -8,10 +8,10 @@ public class ReadCsvDataTest {
     @Test
     void testSmallCsv() throws Exception {
         // given
-        final var parser = new ReadCsvData("test.csv");
+        final var parser = new ReadCsvData();
 
         // when
-        final var spells = parser.importSpellsFromCsv();
+        final var spells = parser.importSpellsFromCsv("test.csv");
 
         // then
         Assertions.assertThat(spells).containsExactlyInAnyOrder(
@@ -26,6 +26,18 @@ public class ReadCsvDataTest {
                         .cost("")
                         .description("You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.")
                         .classDescription("Cleric")
+                        .build(),
+                SpellCard.builder()
+                        .spellLevel("X")
+                        .name("Warding Flare")
+                        .type("Reaction")
+                        .castingDuration("Reaction")
+                        .range("30 feet")
+                        .requirements("V")
+                        .duration("Instantaneous")
+                        .cost("")
+                        .description("When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can’t be blinded is immune to this feature. You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.")
+                        .classDescription("Cleric (Light) lvl≥1")
                         .build(),
                 SpellCard.builder()
                         .spellLevel("3")

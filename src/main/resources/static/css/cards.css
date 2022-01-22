@@ -1,0 +1,139 @@
+main {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+html, body {
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.card {
+    margin: 2px;
+    width: 48%;
+    height: 48%;
+    border: 3px solid orange;
+    border-radius: 3px;
+    float: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.card.double,
+.card.page {
+    width: 97%;
+}
+
+.card.page {
+    height: 97%;
+}
+
+.card.double:after,
+.card.page:after {
+    content: "";
+    height: 100%;
+    border-left: 1px dashed rgba(0, 0, 0, 0.50);
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+}
+
+.card.page:before {
+    content: "";
+    width: 100%;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.50);
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+}
+
+.card h1 {
+    height: 40px;
+    margin: 0;
+    border-bottom: 1px solid orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+}
+
+.card .lvl {
+    margin: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding: 5px 10px 0 5px;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+}
+
+.card .name {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    padding-top: 8px;
+    padding-right: 5px;
+    color: white;
+    font-size: 15pt;
+}
+
+.card.double .name {
+    width: 46%;
+}
+
+.card.double .spacer {
+    width: 54%;
+}
+
+.card .info,
+.card .cost {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    min-height: 35px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid orange;
+}
+
+.card .info {
+    justify-content: space-between;
+}
+
+.card .info :first-child {
+    width: 60px;
+}
+
+.card .info :nth-child(3) {
+    width: 78px;
+}
+
+.card .cost {
+    padding: 0 5px;
+}
+
+.card .info > * {
+    padding: 5px;
+    margin: 0;
+}
+
+.card .info :last-child {
+    text-align: right;
+}
+
+.card .body {
+    padding: 15px;
+    flex: 1;
+    overflow-y: hidden;
+}
+
+.card footer {
+    border-top: 1px solid orange;
+    height: 15px;
+    text-align: right;
+    padding: 5px;
+}
+

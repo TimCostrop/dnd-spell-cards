@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Light cleric spell cards</title>
+    <link rel="stylesheet" th:href="@{/css/cards.css}"/>
+</head>
+<body>
+<main>
+    <div th:class="'card ' + ${#strings.toLowerCase(card.cardClass)}"
+         th:each="card : ${spellCards}">
+        <h1>
+            <span class="lvl" th:text="${card.spellLevel}"></span>
+            <span class="name" th:text="${card.name}"></span>
+            <span class="spacer" th:if="${card.cardClass != T(be.costrop.dnd_spell_cards.csv.CardClass).SINGLE}"></span>
+        </h1>
+        <section class="info">
+            <p th:text="${card.requirements}"></p>
+            <p th:text="${card.type}"></p>
+            <p th:class="${#strings.containsIgnoreCase(card.castingDuration, 'concentration') ? 'concentration' : ''}"
+               th:text="${card.castingDuration}">
+            </p>
+            <p th:text="${card.range}"></p>
+        </section>
+        <section class="cost" th:if="${!#strings.isEmpty(card.cost)}" th:text="${card.cost}"></section>
+        <section class="body" th:utext="${card.description}">
+        </section>
+        <footer th:text="${card.classDescription}"></footer>
+    </div>
+</main>
+</body>
+</html>

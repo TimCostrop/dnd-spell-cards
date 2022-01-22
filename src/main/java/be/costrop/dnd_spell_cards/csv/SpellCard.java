@@ -1,6 +1,8 @@
 package be.costrop.dnd_spell_cards.csv;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 
 @Data
 @AllArgsConstructor
@@ -16,4 +18,14 @@ public class SpellCard {
     private String cost;
     private String description;
     private String classDescription;
+
+    public CardClass getCardClass() {
+        if (description.length() > 840) {
+            if (description.length() > 1780) {
+                return CardClass.PAGE;
+            }
+            return CardClass.DOUBLE;
+        }
+        return CardClass.SINGLE;
+    }
 }
