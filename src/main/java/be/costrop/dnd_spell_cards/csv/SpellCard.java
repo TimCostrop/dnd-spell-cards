@@ -19,6 +19,9 @@ public class SpellCard {
     private String description;
     private String classDescription;
 
+    /**
+     * Used by thymeleaf, to determine the size of the card
+     */
     public CardClass getCardClass() {
         if (description.length() > 840) {
             if (description.length() > 1780) {
